@@ -1,0 +1,70 @@
+.dotNav {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 800;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.dotItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.dotItem:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  flex-shrink: 0;
+  transition: background 0.28s ease, transform 0.28s ease, border-color 0.28s ease;
+}
+
+.dotActive .dot {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: scale(1.45);
+}
+
+.dotLabel {
+  position: absolute;
+  right: calc(100% + 8px);
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  background: rgba(10,10,10,0.8);
+  padding: 3px 8px;
+  border-radius: 3px;
+  opacity: 0;
+  transform: translateX(4px);
+  transition: opacity 0.2s, transform 0.2s;
+  pointer-events: none;
+}
+
+.dotItem:hover .dotLabel {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 900px) {
+  .dotNav { display: none; }
+}

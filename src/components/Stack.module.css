@@ -1,0 +1,133 @@
+.watermark {
+  top: -2rem;
+  left: -2rem;
+}
+
+.groups {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 60px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.groupLabel {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.3);
+}
+
+.badgeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Badge base */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  cursor: default;
+  opacity: 0;
+  transform: scale(0.82);
+  transition:
+    opacity 0.32s ease,
+    transform 0.32s ease,
+    border-color 0.22s ease,
+    color 0.22s ease,
+    background 0.22s ease,
+    box-shadow 0.22s ease;
+  user-select: none;
+}
+
+.badgeVisible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.badge:hover {
+  border-color: var(--color-accent);
+  color: var(--color-text);
+  background: rgba(59,130,246,0.06);
+  box-shadow: 0 0 12px rgba(59,130,246,0.15);
+}
+
+.badge:active {
+  transform: scale(0.96);
+}
+
+.badgeIcon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* Code editor */
+.editor {
+  background: #0d1117;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-width: 700px;
+}
+
+.editorHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 18px;
+  background: #161b22;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.editorDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.red    { background: #FF5F57; }
+.yellow { background: #FFBD2E; }
+.green  { background: #28CA41; }
+
+.editorFilename {
+  font-family: var(--font-code);
+  font-size: 0.74rem;
+  color: rgba(255,255,255,0.38);
+  margin-left: 8px;
+}
+
+.editorBody {
+  padding: 24px 28px;
+  font-family: var(--font-code);
+  font-size: 0.84rem;
+  line-height: 1.9;
+  white-space: pre;
+  overflow-x: auto;
+  margin: 0;
+}
+
+/* Syntax colors */
+.comment { color: #6A9955; }
+.kw      { color: #569CD6; }
+.varName { color: #9CDCFE; }
+.bracket { color: #FFFFFF; }
+.key     { color: #9CDCFE; }
+.str     { color: #CE9178; }

@@ -1,0 +1,96 @@
+.watermark {
+  top: -2rem;
+  right: -2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  margin-bottom: 72px;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.highlight {
+  color: var(--color-accent);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.right p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+
+.right p strong {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.resumeBtn {
+  margin-top: 24px;
+  display: inline-flex;
+}
+
+/* Stat cards grid */
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Stat card — base styles (animation added by JS) */
+.statCard {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.25s ease;
+}
+
+.statCard.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.statCard:hover {
+  box-shadow: 0 8px 30px rgba(59,130,246,0.1);
+  background: var(--color-bg-card-hover);
+}
+
+.statNumber {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.statLabel {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; gap: 40px; }
+  .statGrid { grid-template-columns: 1fr; gap: 14px; }
+}
