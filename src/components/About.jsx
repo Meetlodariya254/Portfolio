@@ -31,7 +31,7 @@ function CountUp({ target, suffix = '', duration = 1200 }) {
 
 const STATS = [
   { count: 2,   suffix: '+', label: 'Years Learning' },
-  { count: 15,  suffix: '+', label: 'Projects Built' },
+  { count: 5,   suffix: '+', label: 'Projects Built' },
   { count: 100, suffix: '%', label: 'Satisfaction' },
 ];
 

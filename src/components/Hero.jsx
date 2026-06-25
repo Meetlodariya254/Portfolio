@@ -132,7 +132,7 @@ export default function Hero() {
           </div>
           <div className={styles.statDivider} aria-hidden="true" />
           <div className={styles.stat} role="listitem">
-            <span className={styles.statValue}>15+</span>
+            <span className={styles.statValue}>5+</span>
             <span className={styles.statLabel}>Projects</span>
           </div>
           <div className={styles.statDivider} aria-hidden="true" />
