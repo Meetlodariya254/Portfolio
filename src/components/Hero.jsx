@@ -94,9 +94,12 @@ export default function Hero() {
         <p className={styles.label} aria-hidden="true">HELLO, I'M</p>
 
         <h1 className={styles.name} id="hero-name" aria-label="Meet Lodariya">
-          <SplitName chars={NAME_FIRST} baseDelay={0.5} />
-          <span className={styles.nameSpace}>&nbsp;</span>
-          <SplitName chars={NAME_LAST} baseDelay={0.5 + NAME_FIRST.length * 0.06 + 0.06} />
+          <span className={styles.word}>
+            <SplitName chars={NAME_FIRST} baseDelay={0.5} />
+          </span>
+          <span className={styles.word}>
+            <SplitName chars={NAME_LAST} baseDelay={0.5 + NAME_FIRST.length * 0.06 + 0.06} />
+          </span>
         </h1>
 
         <div className={styles.typingRow} aria-live="polite">

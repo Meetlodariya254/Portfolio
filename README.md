@@ -11,7 +11,7 @@
   A state-of-the-art personal portfolio web application designed to demonstrate clean engineering, responsive layouts, and rich interactive web design.
 </p>
 
-[View Live Demo](#) · [Report Bug](https://github.com/Meetlodariya254/Portfolio/issues) · [Request Feature](https://github.com/Meetlodariya254/Portfolio/issues)
+[View Live Demo](https://portfolio-meetlodariya.vercel.app/) · [Report Bug](https://github.com/Meetlodariya254/Portfolio/issues) · [Request Feature](https://github.com/Meetlodariya254/Portfolio/issues)
 
 </div>
 

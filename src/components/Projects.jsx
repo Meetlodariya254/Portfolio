@@ -28,7 +28,7 @@ const PROJECTS = [
     gradientFrom: '#0f1a0f',
     gradientTo: '#1a2e1a',
     preview: 'green',
-    liveUrl: 'https://github.com/Meetlodariya254/EventFlow',
+    liveUrl: 'https://eventflow-agent.vercel.app',
     githubUrl: 'https://github.com/Meetlodariya254/EventFlow',
   },
   {
@@ -42,7 +42,7 @@ const PROJECTS = [
     gradientFrom: '#1a0f1a',
     gradientTo: '#2e1a2e',
     preview: 'purple',
-    liveUrl: 'https://github.com/Meetlodariya254/Portfolio',
+    liveUrl: 'https://portfolio-meetlodariya.vercel.app',
     githubUrl: 'https://github.com/Meetlodariya254/Portfolio',
   },
   {
@@ -56,7 +56,7 @@ const PROJECTS = [
     gradientFrom: '#0f1a2e',
     gradientTo: '#1a2e3a',
     preview: 'kanban',
-    liveUrl: 'https://github.com/Meetlodariya254/Birthday-Wish',
+    liveUrl: 'https://birthday-wish-webapp.vercel.app',
     githubUrl: 'https://github.com/Meetlodariya254/Birthday-Wish',
   },
 ];

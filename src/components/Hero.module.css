@@ -62,7 +62,9 @@
   letter-spacing: -0.03em;
   color: var(--color-text);
   margin-bottom: 28px;
-  white-space: nowrap;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.25em;
 }
 
 .char {
@@ -72,9 +74,9 @@
   animation: charUp 0.5s ease forwards;
 }
 
-.nameSpace {
+.word {
   display: inline-block;
-  width: 0.25em;
+  white-space: nowrap;
 }
 
 /* Typing row */
@@ -232,7 +234,7 @@
 
 /* Responsive */
 @media (max-width: 600px) {
-  .name { white-space: normal; font-size: clamp(3rem, 14vw, 5rem); }
+  .name { font-size: clamp(3rem, 14vw, 5rem); }
   .buttons { flex-direction: column; align-items: flex-start; }
   .stats { gap: 20px; }
   .content { padding-top: 100px; }
