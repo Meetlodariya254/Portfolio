@@ -105,15 +105,50 @@ function ContactHeadline() {
 function ContactForm() {
   const formRef = useRef(null);
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle'); // idle | sending | sent | error
   const [errorMsg, setErrorMsg] = useState('');
 
+  const validateForm = () => {
+    const newErrors = {};
+    if (!form.name.trim()) {
+      newErrors.name = 'Please enter your name.';
+    }
+    if (!form.email.trim()) {
+      newErrors.email = 'Please enter your email address.';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+      newErrors.email = 'Please enter a valid email address.';
+    } else {
+      const lower = form.email.trim().toLowerCase();
+      if (lower.includes('meetlodariya60') || lower.includes('meetlodariya254')) {
+        newErrors.email = 'Please use your own email address, not mine.';
+      }
+    }
+    if (!form.subject.trim()) {
+      newErrors.subject = 'Please enter a subject.';
+    }
+    if (!form.message.trim()) {
+      newErrors.message = 'Please enter your message.';
+    }
+    return newErrors;
+  };
+
   const handleChange = e => {
-    setForm(f => ({ ...f, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setForm(f => ({ ...f, [name]: value }));
+    if (errors[name]) {
+      setErrors(errs => ({ ...errs, [name]: '' }));
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
     setStatus('sending');
     setErrorMsg('');
 
@@ -140,8 +175,13 @@ function ContactForm() {
         {
           from_name:  form.name,
           from_email: form.email,
+          user_name:  form.name,
+          user_email: form.email,
+          name:       form.name,
+          email:      form.email,
           subject:    form.subject,
           message:    form.message,
+          to_name:    'Meet Lodariya',
           to_email:   'meetlodariya60@gmail.com',
           reply_to:   form.email,
         },
@@ -149,6 +189,7 @@ function ContactForm() {
       );
       setStatus('sent');
       setForm({ name: '', email: '', subject: '', message: '' });
+      setErrors({});
       setTimeout(() => setStatus('idle'), 6000);
     } catch (err) {
       console.error('EmailJS error:', err);
@@ -169,13 +210,14 @@ function ContactForm() {
             id="contact-name"
             name="name"
             type="text"
-            className={styles.input}
+            className={`${styles.input} ${errors.name ? styles.inputError : ''}`}
             placeholder="John Doe"
             value={form.name}
             onChange={handleChange}
             required
             autoComplete="name"
           />
+          {errors.name && <span className={styles.fieldError}>{errors.name}</span>}
         </div>
         <div className={styles.formGroup}>
           <label className={styles.label} htmlFor="contact-email">Email Address</label>
@@ -183,13 +225,14 @@ function ContactForm() {
             id="contact-email"
             name="email"
             type="email"
-            className={styles.input}
+            className={`${styles.input} ${errors.email ? styles.inputError : ''}`}
             placeholder="john@example.com"
             value={form.email}
             onChange={handleChange}
             required
             autoComplete="email"
           />
+          {errors.email && <span className={styles.fieldError}>{errors.email}</span>}
         </div>
       </div>
 
@@ -199,12 +242,13 @@ function ContactForm() {
           id="contact-subject"
           name="subject"
           type="text"
-          className={styles.input}
+          className={`${styles.input} ${errors.subject ? styles.inputError : ''}`}
           placeholder="Project Inquiry / Job Offer / Collaboration"
           value={form.subject}
           onChange={handleChange}
           required
         />
+        {errors.subject && <span className={styles.fieldError}>{errors.subject}</span>}
       </div>
 
       <div className={styles.formGroup}>
@@ -212,13 +256,14 @@ function ContactForm() {
         <textarea
           id="contact-message"
           name="message"
-          className={`${styles.input} ${styles.textarea}`}
+          className={`${styles.input} ${styles.textarea} ${errors.message ? styles.inputError : ''}`}
           placeholder="Tell me about your project, timeline, and budget..."
           value={form.message}
           onChange={handleChange}
           required
           rows={5}
         />
+        {errors.message && <span className={styles.fieldError}>{errors.message}</span>}
       </div>
 
       <button
@@ -234,7 +279,6 @@ function ContactForm() {
         {status === 'sent'   && '✓ MESSAGE SENT!'}
         {status === 'error'  && 'TRY AGAIN →'}
       </button>
-
       {status === 'sent' && (
         <p className={styles.successMsg} role="status" aria-live="polite">
           🎉 Thanks for reaching out! I'll get back to you within 24 hours.
