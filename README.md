@@ -63,9 +63,9 @@ Here are the real-world applications highlighted on the portfolio:
    *High-performance developer portfolio built with React 19, Vite, modular Vanilla CSS, and EmailJS.*  
    `React 19` · `Vite` · `Vanilla CSS` · `EmailJS`
 
-4. **[Interactive Birthday Wish App](https://github.com/Meetlodariya254/Birthday-Wish)**  
-   *Dynamic, engaging celebration greeting website built with responsive HTML5, CSS animations, and Vanilla JS.*  
-   `HTML5` · `CSS3` · `JavaScript`
+4. **[Luxury Photography Studio Showcase](https://github.com/Meetlodariya254/luxury-studio-showcase)**  
+   *Ultra-premium interactive 3D portfolio and creative showcase designed for high-end photography studios.*  
+   `Three.js` · `GSAP` · `Vite` · `Vanilla JS`
 
 ---
 
