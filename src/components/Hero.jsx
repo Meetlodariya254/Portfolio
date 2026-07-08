@@ -119,13 +119,16 @@ export default function Hero() {
           >
             EXPLORE MY WORK <span aria-hidden="true">→</span>
           </button>
-          <button
+          <a
+            href="/My Resume.pdf"
+            download="Meet_Lodariya_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-outline"
             id="btn-resume"
-            onClick={() => window.open('#', '_blank', 'noopener,noreferrer')}
           >
             DOWNLOAD RESUME
-          </button>
+          </a>
         </div>
 
         <div className={styles.stats} role="list" aria-label="Quick stats">

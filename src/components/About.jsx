@@ -88,10 +88,12 @@ export default function About() {
               possible on the web.
             </p>
             <a
-              href="#"
+              href="/My Resume.pdf"
+              download="Meet_Lodariya_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className={`btn btn-outline ${styles.resumeBtn}`}
               id="btn-resume-about"
-              onClick={e => e.preventDefault()}
               aria-label="Download resume"
             >
               DOWNLOAD RESUME →
