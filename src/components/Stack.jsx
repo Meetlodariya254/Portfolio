@@ -18,12 +18,11 @@ const TECH = {
   Database: [
     { icon: '🐘', name: 'PostgreSQL' },
     { icon: '🍃', name: 'MongoDB' },
-    { icon: '🔴', name: 'Redis' },
   ],
-  'Tools & DevOps': [
+  'Tools': [
     { icon: '🌿', name: 'Git & GitHub' },
-    { icon: '🐳', name: 'Docker' },
-    { icon: '☁️',  name: 'AWS' },
+    { icon: '💻', name: 'VS Code' },
+    { icon: '▲', name: 'Vercel' },
     { icon: '⚡', name: 'Vite' },
   ],
 };
