@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import styles from './Projects.module.css';
+import hardwareShopImg from '../assets/hardware-shop.png';
+import eventFlowImg from '../assets/eventflow.png';
+import robuztaTechlabsImg from '../assets/robuzta-techlabs.png';
+import luxuryStudioImg from '../assets/luxury-studio.png';
 
 const PROJECTS = [
   {
@@ -13,7 +17,7 @@ const PROJECTS = [
     accentColor: '#3B82F6',
     gradientFrom: '#0f172a',
     gradientTo: '#1e1b4b',
-    image: '/src/assets/hardware-shop.png',
+    image: hardwareShopImg,
     liveUrl: 'https://github.com/Meetlodariya254/hardware-shop-ims',
     githubUrl: 'https://github.com/Meetlodariya254/hardware-shop-ims',
   },
@@ -27,7 +31,7 @@ const PROJECTS = [
     accentColor: '#10b981',
     gradientFrom: '#0f1a0f',
     gradientTo: '#1a2e1a',
-    image: '/src/assets/eventflow.png',
+    image: eventFlowImg,
     liveUrl: 'https://eventflow-agent.vercel.app',
     githubUrl: 'https://github.com/Meetlodariya254/EventFlow',
   },
@@ -41,7 +45,7 @@ const PROJECTS = [
     accentColor: '#a855f7',
     gradientFrom: '#1a0f1a',
     gradientTo: '#2e1a2e',
-    image: '/src/assets/robuzta-techlabs.png',
+    image: robuztaTechlabsImg,
     liveUrl: 'https://robuzta-techlabs-website.vercel.app',
     githubUrl: 'https://github.com/Meetlodariya254/robuzta-techlabs-website',
   },
@@ -55,7 +59,7 @@ const PROJECTS = [
     accentColor: '#f59e0b',
     gradientFrom: '#1a140f',
     gradientTo: '#2e2318',
-    image: '/src/assets/luxury-studio.png',
+    image: luxuryStudioImg,
     liveUrl: 'https://luxury-studio-showcase.vercel.app',
     githubUrl: 'https://github.com/Meetlodariya254/luxury-studio-showcase',
   },
