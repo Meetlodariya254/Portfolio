@@ -13,7 +13,7 @@ const PROJECTS = [
     accentColor: '#3B82F6',
     gradientFrom: '#0f172a',
     gradientTo: '#1e1b4b',
-    preview: 'blue',
+    image: '/images/hardware-shop.png',
     liveUrl: 'https://github.com/Meetlodariya254/hardware-shop-ims',
     githubUrl: 'https://github.com/Meetlodariya254/hardware-shop-ims',
   },
@@ -27,23 +27,23 @@ const PROJECTS = [
     accentColor: '#10b981',
     gradientFrom: '#0f1a0f',
     gradientTo: '#1a2e1a',
-    preview: 'green',
+    image: '/images/eventflow.png',
     liveUrl: 'https://eventflow-agent.vercel.app',
     githubUrl: 'https://github.com/Meetlodariya254/EventFlow',
   },
   {
     id: 'proj-3',
     num: '03',
-    title: 'Sleek Developer Portfolio',
-    desc: 'High-performance personal portfolio built with React 19, Vite, modular Vanilla CSS, and integrated EmailJS contact system.',
-    stack: ['React 19', 'Vite', 'Vanilla CSS', 'EmailJS'],
-    url: 'github.com/Meetlodariya254/Portfolio',
+    title: 'Robuzta Techlabs Website',
+    desc: 'A modern, responsive website built for Robuzta Techlabs to showcase their IT services and solutions.',
+    stack: ['HTML5', 'Vanilla CSS', 'Vanilla JS', 'Three.js'],
+    url: 'github.com/Meetlodariya254/robuzta-techlabs-website',
     accentColor: '#a855f7',
     gradientFrom: '#1a0f1a',
     gradientTo: '#2e1a2e',
-    preview: 'purple',
-    liveUrl: 'https://portfolio-meetlodariya.vercel.app',
-    githubUrl: 'https://github.com/Meetlodariya254/Portfolio',
+    image: '/images/robuzta-techlabs.png',
+    liveUrl: 'https://robuzta-techlabs-website.vercel.app',
+    githubUrl: 'https://github.com/Meetlodariya254/robuzta-techlabs-website',
   },
   {
     id: 'proj-4',
@@ -55,55 +55,13 @@ const PROJECTS = [
     accentColor: '#f59e0b',
     gradientFrom: '#1a140f',
     gradientTo: '#2e2318',
-    preview: 'kanban',
+    image: '/images/luxury-studio.png',
     liveUrl: 'https://luxury-studio-showcase.vercel.app',
     githubUrl: 'https://github.com/Meetlodariya254/luxury-studio-showcase',
   },
 ];
 
-/* Dashboard wireframe preview by type */
-function DashboardPreview({ type, accentColor }) {
-  if (type === 'kanban') {
-    return (
-      <div className={styles.kanban}>
-        {[
-          { col: accentColor, cards: 2 },
-          { col: '#3B82F6',   cards: 3 },
-          { col: '#10b981',   cards: 1 },
-        ].map((col, ci) => (
-          <div key={ci} className={styles.kanbanCol}>
-            <div className={styles.kanbanHeader} style={{ background: `${col.col}33` }} />
-            {Array.from({ length: col.cards }).map((_, i) => (
-              <div key={i} className={styles.kanbanCard} style={{ background: `${col.col}14` }} />
-            ))}
-          </div>
-        ))}
-      </div>
-    );
-  }
 
-  return (
-    <div className={styles.dashPreview}>
-      <div className={styles.dashTopbar}>
-        <div className={styles.dashDot} style={{ background: accentColor }} />
-        <div className={styles.dashBar} />
-      </div>
-      <div className={styles.dashRow}>
-        <div className={styles.dashSidebar} style={{ background: `${accentColor}0d` }} />
-        <div className={styles.dashMain}>
-          <div className={styles.dashCards}>
-            {[0.18, 0.12, 0.09].map((op, i) => (
-              <div key={i} className={styles.dashCard} style={{ background: `${accentColor}${Math.round(op * 255).toString(16).padStart(2, '0')}` }} />
-            ))}
-          </div>
-          {[90, 72, 84, 60].map((w, i) => (
-            <div key={i} className={styles.dashRow2} style={{ width: `${w}%`, background: `${accentColor}14` }} />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function ProjectCard({ project, delay }) {
   const ref = useRef(null);
@@ -157,14 +115,8 @@ function ProjectCard({ project, delay }) {
           <span className={`${styles.bDot} ${styles.bGreen}`} />
           <span className={styles.bUrl}>{project.url}</span>
         </div>
-        <div
-          className={styles.browserBody}
-          style={{ background: `linear-gradient(135deg, ${project.gradientFrom} 0%, ${project.gradientTo} 100%)` }}
-        >
-          <DashboardPreview type={project.preview} accentColor={project.accentColor} />
-          <div className={`${styles.overlay} ${hovered ? styles.overlayVisible : ''}`}>
-            <span className={styles.overlayText}>VIEW PROJECT →</span>
-          </div>
+        <div className={styles.browserBody}>
+          <img src={project.image} alt={project.title} className={styles.projectImage} />
         </div>
       </div>
 
